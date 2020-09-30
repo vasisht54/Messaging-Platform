@@ -1,0 +1,137 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Chat</title>
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(function () {
+      $("#includedContent").load("one-to-one.html");
+    });
+  </script>
+</head>
+<body>
+<div style="background-color: white; border-radius: 6px">
+  <div id="includedContent" class="pl-3 pr-3 pt-3"></div>
+  <div class="p-3">
+    <h4>Groups</h4>
+    <hr/>
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <input type="text"
+               class="form-control"
+               placeholder="Enter group name"
+               id="groupName">
+      </div>
+      <div class="col-md-4">
+        <input type="text"
+               class="form-control"
+               placeholder="Enter group description"
+               id="groupDescription">
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-primary btn-block" id="createGroup">Create Group</button>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <input type="text"
+               class="form-control"
+               placeholder="Enter group name"
+               id="groupNameAddMember">
+      </div>
+      <div class="col-md-4">
+        <input type="text"
+               class="form-control"
+               placeholder="Enter username"
+               id="member">
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-primary btn-block" id="addMemberClick">Add member</button>
+      </div>
+    </div>
+     <div class="row mb-3">
+       <div class="col-md-4">
+         <input type="text"
+                class="form-control"
+                placeholder="Parent group name"
+                id="groupMergeA">
+       </div>
+       <div class="col-md-4">
+         <input type="text"
+                class="form-control"
+                placeholder="Child group name"
+                id="groupMergeB">
+       </div>
+       <div class="col-md-4">
+         <button class="btn btn-primary btn-block" id="mergeGroup">Merge Group</button>
+       </div>
+     </div>
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <input type="text"
+               class="form-control"
+               placeholder="Enter group name"
+               id="groupNameAddModerator">
+      </div>
+      <div class="col-md-4">
+        <input type="text"
+               class="form-control"
+               placeholder="Enter username"
+               id="moderator">
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-primary btn-block" id="addModerator">Add Moderator</button>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <input type="text"
+               class="form-control"
+               placeholder="Enter group name"
+               id="groupNameRemoveMember">
+      </div>
+      <div class="col-md-4">
+        <input type="text"
+               class="form-control"
+               placeholder="Enter username"
+               id="removeMemberName">
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-danger btn-block" id="removeMember">Remove member</button>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <input type="text"
+               class="form-control"
+               placeholder="Enter group name"
+               id="groupNameRemoveModerator">
+      </div>
+      <div class="col-md-4">
+        <input type="text"
+               class="form-control"
+               placeholder="Enter username"
+               id="deleteModeratorName">
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-danger btn-block" id="removeModerator">Delete Moderator</button>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-8">
+        <input type="text"
+               class="form-control"
+               placeholder="Enter group name"
+               id="deleteGroupName">
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-danger btn-block" id="deleteGroup">Delete Group</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

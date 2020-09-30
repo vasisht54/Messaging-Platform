@@ -1,0 +1,50 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Chat</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main id="main">
+    <img class="logo" src="images/logo.svg" alt="Application logo">
+    <div class="content signup">
+      <img src="images/hero-image.svg" alt="Hero Image">
+      <div class="form form--signup">
+        <h1>Welcome! Create an account.</h1>
+        <input id="username"
+               data-type="username"
+               type="text"
+               placeholder="Username"
+               required>
+        <input id="password"
+               data-type="password"
+               type="password"
+               placeholder="Password"
+               required>
+        <input id="first"
+               data-type="first_name"
+               type="text"
+               placeholder="First Name"
+               required>
+        <input id="last"
+               data-type="last_name"
+               type="text"
+               placeholder="Last Name"
+               required>
+        <select name="language"
+                data-type="language_preference"
+                id="language">
+          <option disabled selected>Choose a language</option>
+          <option value="en">English</option>
+          <option value="fr">French</option>
+          <option value="sp">Spanish</option>
+        </select>
+        <button type="button" class="button button--signup" value="Create an account" id="signup">Create an account</button>
+        <p class="text-with-link">Already have an account? <a href="index.html">Sign in</a>.</p>
+      </div>
+    </div>
+  </main>
+</body>
+
+<script src="js/signup.js"></script>
+</html>

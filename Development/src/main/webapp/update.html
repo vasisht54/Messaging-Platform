@@ -1,0 +1,51 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Chat</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main id="main">
+    <button id="update">Update</button>
+    <div class="update">
+      <div class="update-inner">
+        <h2>Update your profile</h2>
+        <div id="updateUser" class="form form--signup">
+          <input disabled id="username"
+                 data-type="username"
+                 type="text"
+                 placeholder="Username"
+                 required>
+          <input id="password"
+                 data-type="password"
+                 type="password"
+                 placeholder="Password"
+                 required>
+          <input id="first"
+                 data-type="first_name"
+                 type="text"
+                 placeholder="First Name"
+                 required>
+          <input id="last"
+                 data-type="last_name"
+                 type="text"
+                 placeholder="Last Name"
+                 required>
+          <select name="language"
+                  data-type="language_preference"
+                  id="language">
+            <option disabled selected>Choose a language</option>
+            <option value="english">English</option>
+            <option value="french">French</option>
+            <option value="spanish">Spanish</option>
+          </select>
+          <button type="button" class="button button--signin" id="signup">Update profile</button>
+          <button type="button" class="delete-profile" id="deleteUser">Delete profile</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+<script src="js/update.js"></script>
+</html>

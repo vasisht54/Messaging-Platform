@@ -1,0 +1,186 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Chat</title>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.357.0.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/aws-cred.js"></script>
+</head>
+<body>
+<!-- A functional html code-->
+<main id="main">
+  <img class="logo" src="images/logo.svg" alt="Application logo">
+  <div class="content signin">
+    <img class="featured-image" src="images/hero-image.svg" alt="Hero Image">
+    <div class="form">
+      <h1 class="mb-3">Hello, <br>
+        welcome back.</h1>
+      <input id="username"
+             data-type="username"
+             type="text"
+             placeholder="Username"
+             required>
+      <input id="password"
+             data-type="password"
+             type="password"
+             placeholder="Password"
+             required>
+      <button type="button" class="button" value="Create an account" id="signin">Login</button>
+      <p class="text-with-link">Don't have an account? <a href="signup.html">Sign up</a>.</p>
+    </div>
+  </div>
+  <nav class="chat-toggle">
+    <ul class="chat-toggle-menu">
+      <li>
+        <a id="userChat" href="userChat" class="chat-toggle-link user">Users</a>
+      </li>
+      <li>
+        <a id="groupChat" href="userGroup" class="chat-toggle-link group">Groups</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="update-links">
+    <button id="update" class="edit-link user">Profile</button> |
+    <button id="groups" class="edit-link group">Groups</button>
+  </div>
+  <div class="update">
+    <div class="update-inner">
+      <h2>Update your profile</h2>
+      <form id="updateUser" class="form form--signup">
+        <input disabled id="updateUsername"
+               data-type="username"
+               type="text"
+               placeholder="Username"
+               required>
+        <input id="updatePassword"
+               data-type="password"
+               type="password"
+               placeholder="Password"
+               required>
+        <input id="first"
+               data-type="first_name"
+               type="text"
+               placeholder="First Name"
+               required>
+        <input id="last"
+               data-type="last_name"
+               type="text"
+               placeholder="Last Name"
+               required>
+        <select name="language"
+                data-type="language_preference"
+                id="language">
+          <option disabled selected>Choose a language</option>
+          <option value="english">English</option>
+          <option value="french">French</option>
+          <option value="spanish">Spanish</option>
+        </select>
+        <button type="button" class="button button--signin" value="Create an account" id="updateBtn">Update profile</button>
+        <button type="button" class="button button--delete" id="deleteUser">Delete profile</button>
+      </form>
+    </div>
+  </div>
+  <div class="groups">
+    <div class="update-links">
+      <button id="closeGroups" class="edit-link group">Close</button>
+    </div>
+    <div class="groups-inner">
+      <h2>Manage Groups</h2>
+      <div class="row">
+        <input type="text"
+               placeholder="Enter group name"
+               id="groupName">
+        <input type="text"
+               placeholder="Enter group description"
+               id="groupDescription">
+        <button class="button" id="createGroup">Create Group</button>
+      </div>
+      <div class="row">
+        <input type="text"
+               placeholder="Enter group name"
+               id="groupNameAddMember">
+        <input type="text"
+               placeholder="Enter username"
+               id="member">
+        <button class="button" id="addMemberClick">Add member</button>
+      </div>
+      <div class="row">
+        <input type="text"
+               placeholder="Enter group name"
+               id="groupNameAddModerator">
+        <input type="text"
+               placeholder="Enter username"
+               id="moderator">
+        <button class="button" id="addModerator">Add Moderator</button>
+      </div>
+      <div class="row">
+        <input type="text"
+               placeholder="Enter group name"
+               id="groupNameRemoveMember">
+        <input type="text"
+               placeholder="Enter username"
+               id="removeMemberName">
+        <button class="button" id="removeMember">Remove member</button>
+      </div>
+       <div class="row">
+         <input type="text"
+                class="form-control"
+                placeholder="Parent group name"
+                id="groupMergeA">
+         <input type="text"
+                class="form-control"
+                placeholder="Child group name"
+                id="groupMergeB">
+         <button class="button" id="mergeGroup">Merge Group</button>
+     </div>
+      <div class="row">
+        <input type="text"
+               placeholder="Enter group name"
+               id="groupNameRemoveModerator">
+        <input type="text"
+               placeholder="Enter username"
+               id="deleteModeratorName">
+        <button class="button" id="removeModerator">Delete Moderator</button>
+      </div>
+      <div class="row">
+        <input type="text"
+               placeholder="Enter group name"
+               id="deleteGroupName" style="flex-basis: 67%;">
+        <button class="button" id="deleteGroup">Delete Group</button>
+      </div>
+    </div>
+  </div>
+  <div class="messaging">
+    <div id="recipients" class="recipients-list"></div>
+    <div class="chat-window">
+      <div class="chat-log" id="chat"></div>
+      <form id="form">
+        <label class="private-toggle">Set message to private
+          <input type="checkbox" id="status" data-private="false">
+          <span class="indicator"></span>
+        </label>
+        <input type="file" autocomplete="off" class="button button--signin button--file" id="file" placeholder="Upload a file"/>
+        <input type="text" autocomplete="off" id="msg" placeholder="Type a message..."/>
+        <input type="button" id="send" class="button button--submit" value="Send">
+      </form>
+    </div>
+    <div class="thread-list">
+      <button class="thread-close-btn">Close</button>
+      <div id="threadChat"></div>
+      <form id="formThread">
+        <label class="private-toggle">Set message to private
+          <input type="checkbox" id="threadStatus" data-private="false">
+          <span class="indicator"></span>
+        </label>
+        <input type="text" autocomplete="off" id="threadMsg" placeholder="Type a message..."/>
+        <input type="button" id="sendThread" class="button button--submit" value="Send">
+      </form>
+    </div>
+  </div>
+</main>
+
+<script src="js/scripts.js"></script>
+<script src="js/groups.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
